@@ -1,0 +1,103 @@
+.price
+    padding-top: 128px
+    padding-bottom: 135px
+    &__title
+        margin-bottom: 36px
+    &__subtitle
+        max-width: 620px
+        margin-bottom: 112px
+    &__button
+        margin: auto
+        margin-top: 110px
+        width: 220px
+        height: 70px
+        background-color: $main-color
+        &:hover
+            background-color: lighten($main-color, 5%)
+    
+.switch
+  display: flex
+  flex-direction: column
+
+.tab
+    margin-right: 15px
+    padding: 20px 30px
+    display: flex
+    cursor: pointer
+    border: 2px solid $main-color
+    font-family: "Open Sans - Semibold", sans-serif
+    font-size: 20px
+    font-weight: 400
+    line-height: 22px
+    text-transform: uppercase
+    letter-spacing: 1px
+    &:last-child
+        margin-right: 0
+    &:hover
+        color: $text-white
+        background-color: $main-color
+    &s 
+        display: flex
+        margin: auto
+        margin-bottom: 120px
+
+
+.panel
+    display: none
+    animation: fadein .8s
+    &s
+        min-height: 200px
+        width: 100%
+        overflow: hidden
+    &__description
+        display: flex
+        margin: 0
+        width: 370px
+        height: 370px
+        opacity: 0
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        color: $text-white
+        font-family: "Open Sans - Semibold", sans-serif
+        font-size: 20px
+        font-weight: 400
+        line-height: 22px
+        letter-spacing: 1px
+    &__item
+        width: 370px
+        height: 370px
+        margin-right: 20px
+        margin-bottom: 20px
+        background: url('../img/price/item-2.png')
+        &:hover p
+            opacity: 1
+            background: rgba(0, 0, 0, 0.5)
+            cursor: pointer
+    &-items
+        display: flex
+        flex-wrap: wrap
+
+
+
+@keyframes fadein 
+    from 
+        opacity: 0
+    to 
+        opacity: 1
+
+.radio
+  display: none
+    
+#tab-1:checked ~ .panels #panel-1,
+#tab-2:checked ~ .panels #panel-2,
+#tab-3:checked ~ .panels #panel-3,
+#tab-4:checked ~ .panels #panel-4
+  display: block
+
+#tab-1:checked ~ .tabs #tab1,
+#tab-2:checked ~ .tabs #tab2,
+#tab-3:checked ~ .tabs #tab3,
+#tab-4:checked ~ .tabs #tab4
+  background-color: $main-color
+  color: $text-white
